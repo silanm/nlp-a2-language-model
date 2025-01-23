@@ -19,12 +19,14 @@ device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.ba
 loading = st.title("Loading Model...")
 
 import glob
+import time
 
 pattern = "best-val-lstm_lm.*.part"
 downloading_parts = glob.glob(pattern)
 
 if not os.path.exists("best-val-lstm_lm.pt") and len(downloading_parts) == 0:
     gdown.download(id="16QOuo_XGBRakQZ9a-Nywwy28z0o6oBlH", output="best-val-lstm_lm.pt", quiet=False)
+    time.sleep(5)
 
 if os.path.exists("best-val-lstm_lm.pt"):
     tokenizer = torchtext.data.utils.get_tokenizer("basic_english")
