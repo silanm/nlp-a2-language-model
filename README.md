@@ -1,1 +1,1 @@
-# nlp-a2-language-modell
+# nlp-a2-language-model
