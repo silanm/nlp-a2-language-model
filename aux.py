@@ -5,6 +5,17 @@ import math
 
 
 class LSTMLanguageModel(nn.Module):
+    """
+    LSTM Language Model
+
+    Args:
+        vocab_size: int, size of the vocabulary
+        emb_dim: int, size of the word embeddings
+        hid_dim: int, size of the hidden state
+        num_layers: int, number of layers in the LSTM
+        dropout_rate: float, dropout rate
+    """
+
     def __init__(self, vocab_size, emb_dim, hid_dim, num_layers, dropout_rate):
         super().__init__()
         self.num_layers = num_layers
@@ -48,6 +59,19 @@ class LSTMLanguageModel(nn.Module):
 
 
 def generate(prompt, max_seq_len, temperature, model, tokenizer, vocab, device, seed=None):
+    """
+    Generate text given a prompt
+
+    Args:
+        prompt: str, the input prompt
+        max_seq_len: int, maximum sequence length
+        temperature: float, temperature for sampling
+        model: nn.Module, the language model
+        tokenizer: torchtext.data.utils.get_tokenizer, the tokenizer
+        vocab: torchtext.vocab.Vocab, the vocabulary
+        device: torch.device, the device to run the model
+        seed: int, random seed
+    """
     if seed is not None:
         torch.manual_seed(seed)
     model.eval()

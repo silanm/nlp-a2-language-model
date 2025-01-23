@@ -25,3 +25,7 @@ The final model size is approximately 700MB, which includes the model weights, p
 # Model Inference
 
 For inference, a Streamlit application with a chatbox interface was developed to interact with the trained model. This interface allows users to input text and receive predictions or generated text from the model.
+
+### Demo
+
+![](Images/lm-in-action.gif)
