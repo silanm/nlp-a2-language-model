@@ -169,3 +169,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+/Language Model
+/Assignment
+/Archived
+/Dataset
